@@ -39,7 +39,7 @@ const Game = () => {
   const [flipCount, setFlipCount] = useState(0);
 
   if (cards && !cardCount(cards)) {
-    setCards(makeCards(omgLinks));
+    setCards(null);
   }
 
   useEffect(() => {

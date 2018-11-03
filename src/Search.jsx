@@ -6,7 +6,7 @@ const FormStyled = styled.form`
 
 `;
 
-export const Search = (props) => {
+export const Search = props => {
   const { handleSubmit, handleChange, value, cards } = props;
   if (cards) {
     return null
@@ -14,7 +14,7 @@ export const Search = (props) => {
   return (
     <FormStyled onSubmit={handleSubmit}>
       <label>
-        Search:
+        Search Giphy to start a game:
         <input type="text" value={value} onChange={handleChange} />
       </label>
       <input type="submit" value="Submit" />
