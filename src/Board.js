@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import styled from 'styled-components';
 
@@ -7,6 +8,9 @@ const BoardStyled = styled.div`
 `;
 
 function Board(props) {
+  if (!props.cards) {
+    return null;
+  }
   const getRenderedCards = props => props.cards
     .map((propsObj) => {
       const { clickCard, flipCount } = props;
@@ -21,5 +25,9 @@ function Board(props) {
     </BoardStyled>
   );
 }
+
+Board.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default Board;
