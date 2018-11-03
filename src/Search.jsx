@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const FormStyled = styled.form`
@@ -6,7 +7,10 @@ const FormStyled = styled.form`
 `;
 
 export const Search = (props) => {
-  const { handleSubmit, handleChange, value } = props;
+  const { handleSubmit, handleChange, value, cards } = props;
+  if (cards) {
+    return null
+  }
   return (
     <FormStyled onSubmit={handleSubmit}>
       <label>
@@ -16,6 +20,13 @@ export const Search = (props) => {
       <input type="submit" value="Submit" />
     </FormStyled>
   );
+}
+
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Search;

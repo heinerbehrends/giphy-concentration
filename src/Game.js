@@ -19,7 +19,7 @@ const Game = () => {
     if (searchTerm) {
       let searchParameters = {
         'limit': 12,
-        'rating': 'y'
+        'rating': 'y',
       };
       searchParameters['q'] = searchTerm;
       client.search('gifs', searchParameters)
